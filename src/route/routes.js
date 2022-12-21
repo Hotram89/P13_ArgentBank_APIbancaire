@@ -2,6 +2,7 @@ import ErrorPage from "../pages/Error/Error";
 import Home from "../pages/Home/Home";
 import SignIn from "../pages/SignIn/SignIn";
 import Transactions from "../pages/Transactions/Transactions";
+import UserDashboard from "../pages/UserDashboard/UserDashboard";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
   {
     path: "/transactions/:id",
     element: <Transactions />,
+    exact: true,
+  },
+  {
+    path: "/user/:id",
+    element: <UserDashboard />,
     exact: true,
   },
   {
