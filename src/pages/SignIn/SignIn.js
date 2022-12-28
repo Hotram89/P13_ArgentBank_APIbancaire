@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Signin.css";
 import userIcon from "../../img/circle-user-solid.svg";
 import { useState } from "react";
+import { getToken } from "../../provider/APIprovider.js";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { tokenSlice } from "../../store/slices/tokenSlice";
 
 const SignIn = () => {
   const [userEmail, setUserEmail] = useState(null);
   const [userPassword, setUserPassword] = useState(null);
 
-  function handleSubmit(e) {
-    // Ne pas recharger la page
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  //POST request using axios with error handling
+
+  async function handleSubmit(e) {
     e.preventDefault();
-
-    // Récupérer la saisie du formulaire (Username / password)
-
-    // Envoyer ces données au back via l'API pour vérifier si OK
-
-    // Si OK : on récupère le token de l'utilisateur renvoyé par le back
-    // Si OK : naviguer vers la page userDashboard
-
-    // Si pas OK... à voir
+    let token = await getToken(userEmail, userPassword);
+    dispatch(tokenSlice.actions.saveToken(token));
+    localStorage.setItem("HelloSecurityTeam", token);
+    if (token) {
+      navigate("/user");
+    }
   }
 
   return (

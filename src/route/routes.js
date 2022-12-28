@@ -16,7 +16,7 @@ const routes = [
     exact: true,
   },
   {
-    path: "/user/:id",
+    path: "/user",
     element: <UserDashboard />,
     exact: true,
   },

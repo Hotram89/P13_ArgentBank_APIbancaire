@@ -1,10 +1,14 @@
 import React from "react";
 import Logo from "../../img/argentBankLogo.png";
-import userIcon from "../../img/circle-user-solid.svg";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import { useSelector } from "react-redux";
+import SignInBtn from "./SignInBtn";
+import SignOutBtn from "./SignOutBtn";
+import UserBtn from "./UserBtn";
 
 const Header = () => {
+  const profil = useSelector((state) => state.user.value);
   return (
     <nav className="main-nav">
       <Link className="main-nav-logo" to="/">
@@ -16,12 +20,9 @@ const Header = () => {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
 
-      <div>
-        <Link className="main-nav-item" to="/sign-in">
-          <img className="userIcon" src={userIcon} alt="User icon" />
-          Sign In
-        </Link>
-      </div>
+      {profil && <UserBtn user={profil} />}
+      {profil && <SignOutBtn />}
+      {!profil && <SignInBtn />}
     </nav>
   );
 };
