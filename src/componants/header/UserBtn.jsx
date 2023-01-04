@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import userIcon from '../../img/circle-user-solid.svg'
 
 
 const UserBtn = ({user}) => {
@@ -10,8 +11,8 @@ const UserBtn = ({user}) => {
 
     return (  <div>
   
-        <button className="main-nav-item" onClick={handleClick}>
-          <i className="fa fa-user-circle"></i>
+        <button className="user-btn" onClick={handleClick}>
+          <img className="black-icon fa-user-circle" src={userIcon} alt="user logo"/>
           {user.firstName}
         </button>
       </div> );

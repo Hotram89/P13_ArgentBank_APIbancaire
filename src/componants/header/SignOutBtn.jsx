@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-import {tokenSlice} from '../../store/slices/tokenSlice'
-import {userSlice} from '../../store/slices/userSlice'
-
+import {tokenSlice} from 'store/slices/tokenSlice'
+import {userSlice} from 'store/slices/userSlice'
+import Arrow from 'img/right-from-bracket-solid.svg'
 
 
 const SignOutBtn = () => {
@@ -18,8 +18,8 @@ const SignOutBtn = () => {
     }
     return (  <div>
   
-        <button className="main-nav-item" onClick={() => handleLogOut()}>
-          <i className="fa fa-sign-out"></i>
+        <button className="signout-btn main-nav-item" onClick={() => handleLogOut()}>
+          <img className="signout-icon fa-sign-out" src={Arrow} alt="signout icon" />
           Sign Out
         </button>
       </div> );

@@ -48,7 +48,7 @@ export async function getUser(token) {
   }
 }
 
-//PUT request using axios with error handling
+//PUT request using fetch with error handling
 
 export async function editUser(token, firstName, lastName) {
   try {

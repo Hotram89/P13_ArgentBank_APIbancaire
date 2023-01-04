@@ -29,8 +29,10 @@ const SignIn = () => {
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">
-        <img className="fa sign-in-icon" src={userIcon} alt="sign in icon" />
-        <h1>Sign In</h1>
+        <div className="form-title">
+          <img className="fa sign-in-icon" src={userIcon} alt="sign in icon" />
+          <h1>Sign In</h1>
+        </div>
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="input-wrapper">
             <label>
@@ -54,8 +56,8 @@ const SignIn = () => {
           </div>
           <div className="input-remember">
             <label>
-              Remember me
               <input type="checkbox" id="remember-me" />
+              Remember me
             </label>
           </div>
           <button type="submit" className="sign-in-button">

@@ -19,9 +19,10 @@ const Header = () => {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
+      <div className="login-nav">
+        {profil && <UserBtn user={profil} />} {profil && <SignOutBtn />}
+      </div>
 
-      {profil && <UserBtn user={profil} />}
-      {profil && <SignOutBtn />}
       {!profil && <SignInBtn />}
     </nav>
   );

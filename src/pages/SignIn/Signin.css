@@ -18,3 +18,45 @@
 .sign-in-icon {
   width: 1.5rem;
 }
+
+form {
+  display: block;
+}
+.input-wrapper {
+  margin-bottom: 1rem;
+}
+
+.input-wrapper label {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.input-wrapper input {
+  background-color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+#input-remember {
+  margin-left: 0.5rem;
+}
+
+.sign-in-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

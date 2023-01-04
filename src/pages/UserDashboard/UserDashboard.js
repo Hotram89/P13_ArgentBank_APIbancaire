@@ -43,6 +43,7 @@ const UserDashboard = () => {
     }
   };
 
+  //ajouter "isLogged" si ce n'est pas le cas envoyer vers la page erreur
   return isLoading ? (
     <div className="loader">is Loading</div>
   ) : (
@@ -52,7 +53,7 @@ const UserDashboard = () => {
           Welcome back
           <br />
           {!isEditing && (
-            <div>
+            <div className="edit-card">
               {user.firstName + " " + user.lastName}!
               <button className="edit-button" onClick={handleEdit}>
                 Edit Name
@@ -60,26 +61,31 @@ const UserDashboard = () => {
             </div>
           )}
           {isEditing && (
-            <div>
-              <input
-                type="text"
-                defaultValue={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-              />
-              <input
-                type="text"
-                defaultValue={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-              />
-              <button className="save-button" onClick={handleSubmit}>
-                Save
-              </button>
-              <button
-                className="cancel-button"
-                onClick={() => setEditing(false)}
-              >
-                Cancel
-              </button>
+            <div className="edit-section">
+              <div className="left-elts edit-elts">
+                <input
+                  type="text"
+                  defaultValue={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
+                <button className="save-button" onClick={handleSubmit}>
+                  Save
+                </button>
+              </div>
+              <div className="right-elts edit-elts">
+                <input
+                  type="text"
+                  defaultValue={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                />
+
+                <button
+                  className="cancel-button"
+                  onClick={() => setEditing(false)}
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           )}
         </h1>
