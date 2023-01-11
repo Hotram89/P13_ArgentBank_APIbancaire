@@ -18,11 +18,14 @@ const SignIn = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    let className = "message";
     let token = await getToken(userEmail, userPassword);
     dispatch(tokenSlice.actions.saveToken(token));
     localStorage.setItem("HelloSecurityTeam", token);
     if (token) {
       navigate("/user");
+    } else {
+      console.log("mauvais email");
     }
   }
 
